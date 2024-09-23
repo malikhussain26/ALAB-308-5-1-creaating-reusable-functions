@@ -6,8 +6,16 @@ const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentV
 
 console.log("sum of the array:", sum);
 
-// retun the average of numbers in an array
-
+// return the average of numbers in an array
 const average = sum / numbers.length;
 
 console.log("Average of the array:", average);
+
+// make an array of strings and return the longest string
+const fruits = ["apple", "orange", "plum", "banana", "jackfruit", "elderberry"];
+
+const longestString = fruits.reduce((acc, curr) => {
+    return acc.length > curr.length ? acc : curr;
+}, "");
+
+console.log("Longest String is:", longestString);
