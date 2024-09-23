@@ -7,3 +7,7 @@ const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentV
 console.log("sum of the array:", sum);
 
 // retun the average of numbers in an array
+
+const average = sum / numbers.length;
+
+console.log("Average of the array:", average);
