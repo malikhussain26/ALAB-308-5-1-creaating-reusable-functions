@@ -60,3 +60,22 @@ const data = [
 // 1. Sort the array by age
 const sortedData = data.sort((a, b) => a.age - b.age);
 console.log("Sorted data:", sortedData);
+
+// 2. Filter the array to remove entries with an age greater than 50.
+const filteredData = data.filter(person => parseInt(person.age) <= 50);
+console.log("filtered data", filteredData);
+
+// 3. Map the array to change the “occupation” key to “job” and increment every age by 1.
+const mappedData = data.map(person => ({...person,
+    job: person.occupation,
+    age: parseInt(person.age) + 1
+}))
+console.log("Mapped data:", mappedData);
+
+// 4-1. Use the reduce method to calculate the sum of the ages.
+const sumOfAges = data.reduce((acc, person) => acc + parseInt(person.age), 0);
+console.log(" Sum of ages:", sumOfAges);
+
+// 4-2. Then use the result to calculate the average age.
+const averageAge = sumOfAges / data.length;
+console.log("Average age:", averageAge);
