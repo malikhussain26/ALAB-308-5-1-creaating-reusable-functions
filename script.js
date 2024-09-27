@@ -113,3 +113,82 @@ console.log(person);
 // increment age of a copy of the object
 const personCopy = incrementAgeCopy(person);
 console.log(personCopy);
+
+
+/**
+ * 
+ * Part 4 - Thinking Practically
+ * 
+ */
+
+// R-LAB-308-4-1 csvString data
+
+const csvString =
+  `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor's Assistant,26`;
+
+const dataArray = csvString.split('\n').slice(1).map(row => {
+    const fields = row.split(',');
+    return {
+        id: fields[0],
+        name: fields[1],
+        occupation: fields[2],
+        age: parseInt(fields[3])
+    };
+});
+console.log("dataArray:", dataArray)
+
+
+const avgAge = dataArray.reduce((sum, person) => sum + person.age, 0) / dataArray.length;
+console.log("Average age:", avgAge);
+
+
+/**
+ * 
+ * Part 5 - Thinking Back
+ * 
+ */
+
+// ALAB-308-3-1
+
+//  // Part 2: Prime Time
+  
+//   let n = 21;
+//   let nextPrime;
+//   let i = n + 1;
+  
+  
+//   outerLoop: while (!nextPrime) {
+//     for (let j = 2; j < i; j++) {
+//       if (i % j === 0) {
+        
+//         i++;
+//         continue outerLoop;
+//       }
+//     }
+//     nextPrime = i;
+//   }
+  
+//   console.log(nextPrime);
+
+function findNextPrime(n) {
+    let i = n + 1;
+
+    while (true) {
+        let isPrime = true;
+        for (let j = 2; j <= Math.sqrt(i); j++) {
+            if (i % j === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        if (isPrime) {
+            return i;
+        }
+
+        i++
+    }
+}
+
+const nextPrime = findNextPrime(21);
+console.log(nextPrime);
