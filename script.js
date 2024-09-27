@@ -19,3 +19,26 @@ const longestString = fruits.reduce((acc, curr) => {
 }, "");
 
 console.log("Longest String is:", longestString);
+
+
+// Take an array of strings, and a number and return an array of the strings that are longer than the given number. 
+function filterStringsByLength(strings, minLength) {
+    return strings.filter(string => string.length >= minLength);
+}
+
+const phrase = "I'm enjoying the Per Scholas Software Engineering program";
+const words = phrase.split(" ");
+const filteredWords = filterStringsByLength(words, 8);
+console.log(filteredWords);
+
+// Take a number, n, and print every number between 1 and n without using loops. Use recursion.
+const n = 21;
+
+function printNumbers(n) {
+    if (n > 0) {
+        printNumbers(n - 1);
+        console.log(n);
+    }
+}
+
+printNumbers(n); 
