@@ -79,3 +79,37 @@ console.log(" Sum of ages:", sumOfAges);
 // 4-2. Then use the result to calculate the average age.
 const averageAge = sumOfAges / data.length;
 console.log("Average age:", averageAge);
+
+/**
+ * 
+ * Part 3 - Thinking Critically
+ * 
+ */
+
+const person = { name: "Malik", occupation: "Software engineer" };
+
+function incrementAge(obj) {
+    if (!obj.age) {
+        obj.age = 26;
+    }
+    obj.age++;
+    obj_updated_at = new Date();
+}
+
+function incrementAgeCopy(obj) {
+    const copy = { ...obj };
+    if (!copy.age) {
+        copy.age = 26;
+    }
+    copy.age++;
+    copy.updated_at = new Date();
+    return copy;
+}
+
+// increment age of the original object
+incrementAge(person);
+console.log(person);
+
+// increment age of a copy of the object
+const personCopy = incrementAgeCopy(person);
+console.log(personCopy);
